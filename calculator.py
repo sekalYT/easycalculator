@@ -1,9 +1,6 @@
 import time
 import math
-print("Select language")
-print("1 - English")
-print("2 - Russian")
-Language = input()
+	
 
 def mathcalculatorEN():
 	print("Powered by sekal")
@@ -17,6 +14,8 @@ def mathcalculatorEN():
 	print("5 - Logarithms")
 	print("6 - Radian in degress")
 	print("7 - Degrees in radians")
+	print("8 - Take the root of a number")
+	print("0 - Select language")
 	answer = input()
 	if answer == "1":
 		print("Write the first number")
@@ -84,7 +83,16 @@ def mathcalculatorEN():
 		print("**************************************************")
 		print(f"Result = {resultgrad}")
 		mathcalculatorEN()
-		
+	if answer == "8":
+		print("Write the number from which you want to take the root")
+		koren = input()
+		time.sleep(0.5)
+		resultkoren = math.sqrt(int(koren))
+		print("**************************************************")
+		print(f"Result = {resultkoren}")
+		mathcalculatorEN()
+	if answer == "0":
+		selectlanguage()
 def mathcalculator():
 	print("Powered by sekal")
 	print("**************************************************")
@@ -97,6 +105,8 @@ def mathcalculator():
 	print("5 - Логарифмы")
 	print("6 - Радианы в градусы")
 	print("7 - Градусы в радианы")
+	print("8 - Извлечь корень")
+	print("0 - Изменить язык")
 	answer = input()
 	if answer == "1":
 		print("Впишите первое число")
@@ -164,9 +174,26 @@ def mathcalculator():
 		print("**************************************************")
 		print(f"Результат = {resultgrad}")
 		mathcalculator()
+	if answer == "8":
+		print("Напишите число из которого нужно извлечь корень")
+		koren = input()
+		time.sleep(0.5)
+		resultkoren = math.sqrt(int(koren))
+		print("**************************************************")
+		print(f"Результат = {resultkoren}")
+		mathcalculator()
+	if answer == "0":
+		selectlanguage()
+
+def selectlanguage():
+	print("Select language")
+	print("1 - English")
+	print("2 - Russian")
+	Language = input()
+	if Language == "1":
+		mathcalculatorEN()
+	if Language == "2":
+		mathcalculator() 
 		
-if Language == "1":
-	mathcalculatorEN()
-	
-if Language == "2":
-	mathcalculator() 
+
+selectlanguage()
